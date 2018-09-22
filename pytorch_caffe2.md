@@ -411,6 +411,8 @@ struct PredictorConfig {
 ```
 
 # queue
+与Tensorflow类似，Caffe2也利用队列对多个线程进行同步，比如在多线程读取输入数据的时候。对队列的所有动作都必须通过“操作”来完成，因此Caffe2又定义了队列相关的操作。
+
 先来看下BlobsQueue的定义：
 ```
 class BlobsQueue : public std::enable_shared_from_this<BlobsQueue> {
